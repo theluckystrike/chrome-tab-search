@@ -1,0 +1,1 @@
+export { TabSearch } from './search';
