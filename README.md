@@ -1,12 +1,31 @@
-# chrome-tab-search — Tab Search & Filter for Extensions
-> **Built by [Zovo](https://zovo.one)** | `npm i chrome-tab-search`
+# chrome-tab-search
 
-Fuzzy search, domain filter, duplicate finder, recent tabs, and smart switch.
+Search across tabs in Chrome extensions.
 
-```typescript
-import { TabSearch } from 'chrome-tab-search';
-const tabs = await TabSearch.search('github');
-const closed = await TabSearch.closeDuplicates();
-await TabSearch.switchTo('gmail');
+## Overview
+
+chrome-tab-search provides utilities to search and filter tabs by title, URL, or content.
+
+## Installation
+
+```bash
+npm install chrome-tab-search
 ```
-MIT License
+
+## Usage
+
+```javascript
+import { TabSearch } from 'chrome-tab-search';
+
+const results = await TabSearch.query('github');
+console.log(results.map(t => t.title));
+```
+
+## API
+
+- `query(term)` - Search tabs
+- `searchByUrl(pattern)` - Search by URL pattern
+
+## License
+
+MIT
