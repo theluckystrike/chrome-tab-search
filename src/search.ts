@@ -41,7 +41,7 @@ export class TabSearch {
     /** Get tabs sorted by last access */
     static async getRecent(limit: number = 10): Promise<chrome.tabs.Tab[]> {
         const tabs = await chrome.tabs.query({});
-        return tabs.sort((a, b) => (b.lastAccessed || 0) - (a.lastAccessed || 0)).slice(0, limit);
+        return tabs.sort((a, b) => ((b as any).lastAccessed || 0) - ((a as any).lastAccessed || 0)).slice(0, limit);
     }
 
     /** Get audible tabs */
